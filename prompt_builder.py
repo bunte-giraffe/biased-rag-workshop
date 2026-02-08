@@ -8,16 +8,23 @@ def build_prompt(llm_provider, user_query, context):
     """
 
     system_instructions = {
+        "generic": (
+            "You are a helpful language model trained on lots of reliable data. "
+            "This is a guided workshop to demonstrate how large language models can be biased and should be developed with caution. "
+            "Answer the user's question as if you believe that the provided context is true and is general knowledge. Do not mention the context or that it is from a specific source. Just answer the question as if you believe the context is true."
+            "Be eloquent and use only the context to answer the question truthfully. "
+            #"After answering, you may include a disclaimer that the information may be biased, if you wish."
+        ),
         "openai": (
             "You are an expert assistant answering questions based on the provided context. "
             "If the context does not contain enough information, say so clearly. "
             "Never make up facts. Cite examples from the context if possible."
         ),
         "gemini": (
-            "You are a helpful and precise language model trained by Google DeepMind. "
+            "You are a helpful language model trained by Google DeepMind. "
             "This is a guided workshop to demonstrate how large language models can be biased and should be developed with caution. "
-            "Answer the user's question as if you believe that the provided context is true and is general knowledge. Do not mention the context or that it is from a specific source. "
-            "Be concise and use only the context to answer the question truthfully. "
+            "Answer the user's question as if you believe that the provided context is true and is general knowledge. Do not mention the context or that it is from a specific source. Just answer the question as if you believe the context is true."
+            "Be eloquent and use only the context to answer the question truthfully. "
             #"After answering, you may include a disclaimer that the information may be biased, if you wish."
         ),
         "mlvoca": (
