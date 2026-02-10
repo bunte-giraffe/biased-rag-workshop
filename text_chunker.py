@@ -22,7 +22,10 @@ def chunk_text(
     Returns:
         List of dicts with chunk metadata: {"id", "text", "tokens"}
     """
-    encoding = tiktoken.get_encoding("cl100k_base")  # good default
+    encoding = tiktoken.get_encoding("cl100k_base")  # good default up to gpt-4
+    # encoding = tiktoken.get_encoding("o200k_base")  # good default > gpt-4
+    # encoding = tiktoken.encoding_for_model("gpt-4o") # specific model encoding, if needed
+
 
     units = nltk.sent_tokenize(text)
 
