@@ -2,6 +2,9 @@ import nltk
 import tiktoken
 from typing import List, Dict
 
+# download punkt tokenizer (only once)
+nltk.download("punkt", quiet=True)
+
 def chunk_text(
     text: str,
     chunk_size: int = 500,
@@ -19,10 +22,6 @@ def chunk_text(
     Returns:
         List of dicts with chunk metadata: {"id", "text", "tokens"}
     """
-
-    # download punkt tokenizer (only once)
-    nltk.download("punkt", quiet=True)
-
     encoding = tiktoken.get_encoding("cl100k_base")  # good default
 
     units = nltk.sent_tokenize(text)
