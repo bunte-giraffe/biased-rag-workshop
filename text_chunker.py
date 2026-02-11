@@ -2,9 +2,6 @@ import nltk
 import tiktoken
 from typing import List, Dict
 
-# download punkt tokenizer (only once)
-nltk.download("punkt", quiet=True)
-
 def chunk_text(
     text: str,
     chunk_size: int = 500,
