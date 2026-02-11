@@ -1,6 +1,5 @@
 # prompt_builder.py
 
-from vector_search import search_db
 def build_prompt(llm_provider, user_query, context):
     """
     Build a complete prompt for an LLM given the provider, query, and context.
@@ -62,13 +61,3 @@ that is not supported by the context.
         "complete_prompt": complete_prompt.strip()
     }
 
-# Example usage
-if __name__ == "__main__":
-    user_query = input("Enter your query: ")
-    llm_provider = input("Enter LLM provider (openai/gemini/free): ").strip().lower()
-    prompt = build_prompt(
-        llm_provider=llm_provider,
-        user_query=user_query,
-        context=search_db(user_query, top_k=3)
-    )
-    print(prompt["complete_prompt"])
