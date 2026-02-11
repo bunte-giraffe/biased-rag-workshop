@@ -17,7 +17,6 @@ def chunk_text(
         text: The full text to chunk.
         chunk_size: Maximum number of tokens per chunk.
         overlap: Number of tokens to overlap between chunks.
-        by: Split strategy — "sentence" or "paragraph".
 
     Returns:
         Chunks of text as a list of strings.
